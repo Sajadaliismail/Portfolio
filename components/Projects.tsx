@@ -3,7 +3,6 @@
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
 import { IconArrowGuide } from "@tabler/icons-react";
-import { it } from "node:test";
 import Image from "next/image";
 
 const Projects = () => {
@@ -66,7 +65,13 @@ const Projects = () => {
                           transform: `translateX(-${5 * index + 2}px)`,
                         }}
                       >
-                        <img src={icon} alt="icon5" className="p-2" />
+                        <Image
+                          width={100}
+                          height={100}
+                          src={icon}
+                          alt="icon5"
+                          className="p-2"
+                        />
                       </div>
                     ))}
                   </div>
