@@ -65,8 +65,8 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "𝐂í𝐫𝐜𝐮𝐥𝐨 - Social Media App",
-    des: " 𝐂í𝐫𝐜𝐮𝐥𝐨, a sophisticated social media web app built on the MERN stack, incorporating various advanced features designed to enhance user experience and scalability.",
+    title: "Círculo - Social Media App",
+    des: " Círculo, a sophisticated social media web app built on the MERN stack, incorporating various advanced features designed to enhance user experience and scalability.",
     img: "/circulo.png",
     iconLists: [
       "/nodejs.svg",
@@ -97,8 +97,8 @@ export const projects = [
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "StreamHive - Movie Streaming Solution",
+    des: "A cutting-edge movie streaming platform built using MongoDB, Express, and React!",
     img: "/streamHive.png",
     iconLists: [
       "/nodejs.svg",

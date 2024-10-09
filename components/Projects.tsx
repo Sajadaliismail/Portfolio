@@ -2,7 +2,7 @@
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/3d-pin";
-import { IconArrowGuide } from "@tabler/icons-react";
+import { IconClick } from "@tabler/icons-react";
 import Image from "next/image";
 
 const Projects = () => {
@@ -80,7 +80,7 @@ const Projects = () => {
                     <p className="flex lg:text-base md:text-xs text-sm text-purple">
                       Check Live Site
                     </p>
-                    <IconArrowGuide className="ms-3" color="#CBACF9" />
+                    <IconClick className="ms-3" color="#CBACF9" />
                   </div>
                 </div>
               </PinContainer>
