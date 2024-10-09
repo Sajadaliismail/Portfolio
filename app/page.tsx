@@ -1,5 +1,6 @@
 import AboutMe from "@/components/AboutMe";
 import HeroComponent from "@/components/HeroComponent";
+import Projects from "@/components/Projects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <FloatingNav />
       <HeroComponent />
       <AboutMe />
+      <Projects />
     </div>
   );
 }

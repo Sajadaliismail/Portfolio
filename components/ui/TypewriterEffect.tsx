@@ -56,24 +56,11 @@ export const TypewriterEffectSmooth = ({
   return (
     <div className={cn("font-bold", className)}>
       <div ref={scope} className="relative">
-        <div className="absolute top-0 left-0 overflow-hidden break-words whitespace-normal text-xs md:text-2xl w-full text-center">
+        <div className="absolute top-0 left-0 overflow-hidden break-words whitespace-normal text-xl md:text-3xl w-full text-center">
           {renderWords()}
         </div>
         <div className="invisible">{renderWords()}</div>
       </div>
-      {/* <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className={cn(
-          "inline-block h-[1em] w-[2px] translate-y-[0.1em] bg-blue-500",
-          cursorClassName
-        )}
-      /> */}
     </div>
   );
 };

@@ -61,3 +61,61 @@ export const gridItems = [
     spareImg: "",
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "𝐂í𝐫𝐜𝐮𝐥𝐨 - Social Media App",
+    des: " 𝐂í𝐫𝐜𝐮𝐥𝐨, a sophisticated social media web app built on the MERN stack, incorporating various advanced features designed to enhance user experience and scalability.",
+    img: "/circulo.png",
+    iconLists: [
+      "/nodejs.svg",
+      "/mongo.svg",
+      "/react.svg",
+      "/docker.svg",
+      "/aws.svg",
+      "graphql.svg",
+    ],
+    link: "Circulo.icu",
+    href: "https://circulo.icu",
+  },
+  {
+    id: 2,
+    title: "Casaluxe - Online Furniture Store",
+    des: "An immersive e-commerce platform designed! Crafted using Node.js and MongoDB, with EJS and jQuery elevating the front-end for an engaging user experience.",
+    img: "/casaluxe.png",
+    iconLists: [
+      "/nodejs.svg",
+      "/mongo.svg",
+      "/react.svg",
+      "/js.svg",
+      "/aws.svg",
+      "/ejs.svg",
+    ],
+    link: "Casaluxe.online",
+    href: "https://casaluxe.online",
+  },
+  {
+    id: 3,
+    title: "AI Image SaaS - Canva Application",
+    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    img: "/streamHive.png",
+    iconLists: [
+      "/nodejs.svg",
+      "/mongo.svg",
+      "/js.svg",
+      "/react.svg",
+      "/redux.svg",
+    ],
+    link: "StreamHive.com",
+    href: "https://stream-hive-lemon.vercel.app/home",
+  },
+  // {
+  //   id: 4,
+  //   title: "Animated Apple Iphone 3D Website",
+  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+  //   img: "/p4.svg",
+  //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+  //   link: "/ui.apple.com",
+  // },
+];

@@ -37,7 +37,6 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  //   remove unecessary things here
   img,
   imgClassName,
   titleClassName,
@@ -70,6 +69,26 @@ export const BentoGridItem = ({
     const text = "sajadaliismail@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
+
+    fetch("/api/downloadResume")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.blob();
+      })
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "Sajad Ali Ismail.pdf";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      })
+      .catch((error) => console.error("Download failed:", error));
+    // const resumeUrl = "/Sajad Ali Ismail.pdf";
+    // window.location.href = resumeUrl;
   };
 
   return (
@@ -90,6 +109,8 @@ export const BentoGridItem = ({
             <Image
               src={img}
               alt={img}
+              width={800}
+              height={600}
               className={cn(imgClassName, "object-cover object-center ")}
             />
           )}
@@ -101,6 +122,8 @@ export const BentoGridItem = ({
         >
           {spareImg && (
             <Image
+              width={800}
+              height={600}
               src={spareImg}
               alt={spareImg}
               className="object-cover object-center w-full h-full"
@@ -166,7 +189,7 @@ export const BentoGridItem = ({
               </div>
 
               <ShimmerButton
-                title={copied ? "Email Copied!" : "Copy my email address"}
+                title={copied ? "Downloaded!" : "Download now"}
                 icon={<IconCopy />}
                 position="left"
                 handleCopy={handleCopy}
