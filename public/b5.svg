@@ -1,0 +1,70 @@
+<svg
+  width="700" 
+  height="600" 
+  viewBox="0 0 400 350" 
+  xmlns="http://www.w3.org/2000/svg"
+  style="background: transparent"
+>
+  <!-- Background Rectangle with Rounded Corners for Border -->
+  <rect
+    x="0"
+    y="0"
+    width="700"
+    height="400"
+    fill="rgba(0, 0, 0, .01)"  
+    stroke="#aaaaaa"
+    stroke-width="1" 
+    rx="10" 
+    ry="10"
+  />
+
+  <!-- Line numbers -->
+  <text x="10" y="30" font-size="18" font-family="monospace" fill="#ffffff91">1</text>
+  <text x="10" y="60" font-size="18" font-family="monospace" fill="#ffffff91">2</text>
+  <text x="10" y="90" font-size="18" font-family="monospace" fill="#ffffff91">3</text>
+  <text x="10" y="120" font-size="18" font-family="monospace" fill="#ffffff91">4</text>
+  <text x="10" y="150" font-size="18" font-family="monospace" fill="#ffffff91">5</text>
+  <text x="10" y="180" font-size="18" font-family="monospace" fill="#ffffff91">6</text>
+  <text x="10" y="210" font-size="18" font-family="monospace" fill="#ffffff91">7</text>
+  <text x="10" y="240" font-size="18" font-family="monospace" fill="#ffffff91">8</text>
+  <text x="10" y="270" font-size="18" font-family="monospace" fill="#ffffff91">9</text>
+  <text x="10" y="300" font-size="18" font-family="monospace" fill="#ffffff91">10</text>
+  <text x="10" y="330" font-size="18" font-family="monospace" fill="#ffffff91">11</text>
+
+  
+
+  <!-- Code lines with gaps -->
+  <text x="30" y="30" font-size="18" font-family="monospace" fill="#00ff0091">
+    const signupUser = async (req, res) =&gt;
+  </text>
+  <text x="30" y="60" font-size="18" font-family="monospace" fill="#ffffff91">
+    {
+  </text>
+  <text x="40" y="90" font-size="18" font-family="monospace" fill="#ffffff91">
+    try {
+  </text>
+  <text x="60" y="120" font-size="18" font-family="monospace" fill="#ffffff91">
+    const userData = req.body;
+  </text>
+  <text x="60" y="150" font-size="18" font-family="monospace" fill="#00ccff91">
+    const user = await createUserInteractor(userData);
+  </text>
+  <text x="60" y="180" font-size="18" font-family="monospace" fill="#ffcc0091">
+    return res.status(200).json({" email: user.email "});
+  </text>
+  <text x="40" y="210" font-size="18" font-family="monospace" fill="#ffffff91">
+    } catch (error) {
+  </text>
+  <text x="60" y="240" font-size="18" font-family="monospace" fill="#ffffff91">
+    if (error.code === 11000) {
+  </text>
+  <text x="80" y="270" font-size="18" font-family="monospace" fill="#ff666691">
+    return res.status(401).json({" error: error.message"});
+  </text>
+  <text x="60" y="300" font-size="18" font-family="monospace" fill="#ffffff91">
+    } return res.status(404).json({"error: error.message "});
+  </text>
+  <text x="30" y="330" font-size="18" font-family="monospace" fill="#ffffff91">
+    }
+  </text>
+</svg>

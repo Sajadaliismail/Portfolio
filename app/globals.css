@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+body {
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}

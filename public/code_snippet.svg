@@ -1,0 +1,68 @@
+<svg
+  width="500" 
+  height="300" 
+  viewBox="0 0 600 350" 
+  xmlns="http://www.w3.org/2000/svg"
+  style="background: transparent"
+>
+  <!-- Background Rectangle with Rounded Corners for Border -->
+  <rect
+    x="0"
+    y="0"
+    width="600"
+    height="350"
+    fill="rgba(0, 0, 0, 0.8)" <!-- Opaque black background -->
+    stroke="#aaaaaa" <!-- Border color (adjust as needed) -->
+    stroke-width="2" <!-- Border thickness -->
+    rx="10" <!-- Rounded corners -->
+    ry="10" <!-- Rounded corners -->
+  />
+
+  <!-- Line numbers -->
+  <text x="10" y="30" font-size="18" font-family="monospace" fill="#aaaaaa">1</text>
+  <text x="10" y="60" font-size="18" font-family="monospace" fill="#aaaaaa">2</text>
+  <text x="10" y="90" font-size="18" font-family="monospace" fill="#aaaaaa">3</text>
+  <text x="10" y="120" font-size="18" font-family="monospace" fill="#aaaaaa">4</text>
+  <text x="10" y="150" font-size="18" font-family="monospace" fill="#aaaaaa">5</text>
+  <text x="10" y="180" font-size="18" font-family="monospace" fill="#aaaaaa">6</text>
+  <text x="10" y="210" font-size="18" font-family="monospace" fill="#aaaaaa">7</text>
+  <text x="10" y="240" font-size="18" font-family="monospace" fill="#aaaaaa">8</text>
+  <text x="10" y="270" font-size="18" font-family="monospace" fill="#aaaaaa">9</text>
+  <text x="10" y="300" font-size="18" font-family="monospace" fill="#aaaaaa">10</text>
+  <text x="10" y="330" font-size="18" font-family="monospace" fill="#aaaaaa">11</text>
+
+  <!-- Code lines with gaps -->
+  <text x="30" y="30" font-size="18" font-family="monospace" fill="#00ff00">
+    const signupUser = async (req, res) =&gt;
+  </text>
+  <text x="30" y="60" font-size="18" font-family="monospace" fill="#ffffff">
+    {"{"}
+  </text>
+  <text x="40" y="90" font-size="18" font-family="monospace" fill="#ffffff">
+    try {"{"}
+  </text>
+  <text x="60" y="120" font-size="18" font-family="monospace" fill="#ffffff">
+    const userData = req.body;
+  </text>
+  <text x="60" y="150" font-size="18" font-family="monospace" fill="#00ccff">
+    const user = await createUserInteractor(userData);
+  </text>
+  <text x="60" y="180" font-size="18" font-family="monospace" fill="#ffcc00">
+    return res.status(200).json({" email: user.email "});
+  </text>
+  <text x="40" y="210" font-size="18" font-family="monospace" fill="#ffffff">
+    {"}"} catch (error) {"{"}
+  </text>
+  <text x="60" y="240" font-size="18" font-family="monospace" fill="#ffffff">
+    if (error.code === 11000) {"{"}
+  </text>
+  <text x="80" y="270" font-size="18" font-family="monospace" fill="#ff6666">
+    return res.status(401).json({" error: error.message"});
+  </text>
+  <text x="60" y="300" font-size="18" font-family="monospace" fill="#ffffff">
+    {"}"} return res.status(404).json({"error: error.message "});
+  </text>
+  <text x="30" y="330" font-size="18" font-family="monospace" fill="#ffffff">
+    {"}"}
+  </text>
+</svg>
