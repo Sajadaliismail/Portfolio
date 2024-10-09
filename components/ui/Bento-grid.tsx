@@ -10,7 +10,6 @@ import { BackgroundGradientAnimation } from "./GradientBg";
 import animationData from "@/data/confetti.json";
 import ShimmerButton from "./ShimmerButton";
 import { IconCopy } from "@tabler/icons-react";
-import { log } from "console";
 
 export const BentoGrid = ({
   className,
