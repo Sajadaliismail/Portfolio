@@ -9,7 +9,10 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-
+interface navItem {
+  link: string;
+  name: string;
+}
 const navItems = [
   {
     name: "About",
@@ -75,7 +78,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
           border: "1px solid rgba(255, 255, 255, 0.125)",
         }}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem: navItem, idx: number) => (
           <Link
             key={`link=${idx}`}
             href={navItem.link}
