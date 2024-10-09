@@ -7,14 +7,12 @@ import { useEffect } from "react";
 export const TypewriterEffectSmooth = ({
   words,
   className,
-  cursorClassName,
 }: {
   words: {
     text: string;
     className?: string;
   }[];
   className?: string;
-  cursorClassName?: string;
 }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.map((word) => ({

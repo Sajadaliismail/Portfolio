@@ -1,11 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  IconBriefcase,
-  IconFileCode,
-  IconInfoCircle,
-  IconMail,
-} from "@tabler/icons-react";
+
 import {
   motion,
   AnimatePresence,
@@ -41,7 +36,7 @@ export const FloatingNav = ({ className }: { className?: string }) => {
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
