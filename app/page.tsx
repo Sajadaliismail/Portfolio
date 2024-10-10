@@ -1,5 +1,7 @@
+"use client";
 import AboutMe from "@/components/AboutMe";
 import HeroComponent from "@/components/HeroComponent";
+import Profiles from "@/components/Profiles";
 import Projects from "@/components/Projects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
@@ -10,6 +12,7 @@ export default function Home() {
       <HeroComponent />
       <AboutMe />
       <Projects />
+      <Profiles />
     </div>
   );
 }
