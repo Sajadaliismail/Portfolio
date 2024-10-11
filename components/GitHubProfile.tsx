@@ -94,7 +94,7 @@ export default function EnhancedGitHubProfile() {
     <>
       <div className="bg-black-100 px-5 md:px-20 pb-10">
         <GlareCard
-          externalLink="https://leetcode.com/sajadaliismail/"
+          externalLink="https://github.com/Sajadaliismail/"
           className="bg-black-100"
         >
           <div className="p-4 flex flex-col">
