@@ -62,6 +62,27 @@ export const gridItems = [
   },
 ];
 
+export const companies = [
+  {
+    id: 1,
+    title: "Junior Web Developer",
+    company: "CrowdLinks Technologies",
+    Place: "Edappally, Kochi - 682025",
+    Dates: "February 2022 - September 2023",
+    Description:
+      "Gained practical experience in building responsive and interactive web pages using HTML, CSS, and JavaScript. Developed a solid foundation in front-end web development, focusing on translating design mockups into functional, clean-coded websites.",
+  },
+  {
+    id: 2,
+    title: "Production Manager",
+    company: "Royal Wood Packers",
+    Place: "Perumabvoor, Kochi - 683547",
+    Dates: "June 2016 - December 2021",
+    Description:
+      "Coordinated cross-functional teams to ensure efficient production processes, meeting deadlines, and maintaining quality standards. Led efforts to streamline communication between departments, optimizing workflow and ensuring successful project execution.",
+  },
+];
+
 export const projects = [
   {
     id: 1,

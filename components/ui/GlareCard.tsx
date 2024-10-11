@@ -1,12 +1,15 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { useRef } from "react";
 
 export const GlareCard = ({
   children,
   className,
+  externalLink,
 }: {
   children: React.ReactNode;
   className?: string;
+  externalLink?: string;
 }) => {
   const isPointerInside = useRef(false);
   const refElement = useRef<HTMLDivElement>(null);
@@ -66,7 +69,7 @@ export const GlareCard = ({
   return (
     <div
       style={containerStyle}
-      className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]"
+      className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform w-[320px] [aspect-ratio:17/21]  cursor-pointer"
       ref={refElement}
       onPointerMove={(event) => {
         const rotateFactor = 0.4;
@@ -114,6 +117,7 @@ export const GlareCard = ({
           refElement.current?.style.setProperty("--r-y", `0deg`);
         }
       }}
+      onClick={() => window.open(externalLink, "_blank", "noopener,noreferrer")}
     >
       <div className="h-full grid will-change-transform origin-center transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] [transform:rotateY(var(--r-x))_rotateX(var(--r-y))] rounded-[var(--radius)] border border-slate-800 hover:[--opacity:0.6] hover:[--duration:200ms] hover:[--easing:linear] hover:filter-none overflow-hidden">
         <div className="w-full h-full grid [grid-area:1/1] mix-blend-soft-light [clip-path:inset(0_0_0_0_round_var(--radius))]">

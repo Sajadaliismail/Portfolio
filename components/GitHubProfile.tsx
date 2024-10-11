@@ -93,7 +93,10 @@ export default function EnhancedGitHubProfile() {
   return (
     <>
       <div className="bg-black-100 px-5 md:px-20 pb-10">
-        <GlareCard className="bg-black-100">
+        <GlareCard
+          externalLink="https://leetcode.com/sajadaliismail/"
+          className="bg-black-100"
+        >
           <div className="p-4 flex flex-col">
             <div className=" flex flex-row justify-center gap-4 py-4">
               <div className=" ring-2 ring-primary rounded-full">
@@ -105,13 +108,10 @@ export default function EnhancedGitHubProfile() {
                   className="rounded-full"
                 />
               </div>
-              <a
-                href="https://leetcode.com/sajadaliismail/"
-                className="text-xl cursor-pointer "
-              >
+              <div className="text-xl cursor-pointer ">
                 Sajad Ali Ismail
                 <div className="text-xs">Code Explorer</div>
-              </a>
+              </div>
             </div>
             <div className="py-2">
               <div className="flex flex-row items-center gap-4 justify-around content-center mb-2">
