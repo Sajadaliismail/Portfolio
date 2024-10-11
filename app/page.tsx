@@ -1,5 +1,7 @@
 "use client";
 import AboutMe from "@/components/AboutMe";
+import Contact from "@/components/Contact";
+import Copyright from "@/components/Copyright";
 import Experience from "@/components/Experiences";
 import HeroComponent from "@/components/HeroComponent";
 import Profiles from "@/components/Profiles";
@@ -8,13 +10,15 @@ import { FloatingNav } from "@/components/ui/FloatingNavbar";
 
 export default function Home() {
   return (
-    <div className="max-h-full bg-black-100">
+    <div className=" bg-black-100">
       <FloatingNav />
       <HeroComponent />
       <AboutMe />
       <Projects />
       <Profiles />
       <Experience />
+      <Contact />
+      <Copyright children="Sajad Ali Ismail" />
     </div>
   );
 }

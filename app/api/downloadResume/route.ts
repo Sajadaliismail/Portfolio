@@ -22,6 +22,4 @@ export async function GET() {
   response.headers.set("Content-Length", fileBuffer.length.toString());
 
   return response;
-
-  return response;
 }
