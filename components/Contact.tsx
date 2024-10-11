@@ -1,5 +1,4 @@
-import { companies } from "@/data";
-import { BackgroundGradient } from "./ui/CardWithbgGradient";
+import { Toaster, toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -12,13 +11,9 @@ export default function Contact() {
   const [subject, setSubject] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    console.log(e.target.name, e.target.value);
-  };
-  const handleSubmit = async () => {
-    const data = {};
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = { name, email, subject, content };
 
     try {
       const response = await fetch("/api/sendMail", {
@@ -32,21 +27,36 @@ export default function Contact() {
       const result = await response.json();
 
       if (response.ok) {
+        setContent("");
+        setEmail("");
+        setName("");
+        setSubject("");
+        toast.success("Message send successfully");
       } else {
-        console.log("Error sending email:", result.message);
+        toast.error(result.message);
+
+        // console.log("Error sending email:", result.message);
       }
     } catch (error) {
-      console.error("Error:", error);
+      toast.error("Error sending message");
+
+      // console.error("Error:", error);
     }
   };
 
   return (
     <section id="contact" className="bg-black-100">
+      <Toaster
+        theme="dark"
+        richColors
+        position="bottom-center"
+        className="bg-black-100"
+      />
       <h1 className="md:heading text-4xl text-center py-8 ">
         Get in <span className="text-purple-400">Touch</span>
       </h1>
       <div className="flex flex-col mt-5 pb-20 md:flex-row w-full bg-black-100 justify-around items-center gap-5">
-        <form onSubmit={handleSubmit} className="my-8 w-[50vw] ">
+        <form onSubmit={handleSubmit} className="my-8 md:w-[50vw] w-[90vw] ">
           <LabelInputContainer>
             <Input
               value={name}
@@ -54,7 +64,9 @@ export default function Contact() {
               id="name"
               placeholder="Your Name"
               type="text"
-              onChange={handleChange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setName(e.target.value);
+              }}
               required={true}
             />
           </LabelInputContainer>
@@ -66,7 +78,9 @@ export default function Contact() {
               placeholder="example@gmail.com"
               type="email"
               required={true}
-              onChange={handleChange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setEmail(e.target.value);
+              }}
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -76,7 +90,9 @@ export default function Contact() {
               name="subject"
               placeholder="Subject"
               type="text"
-              onChange={handleChange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setSubject(e.target.value);
+              }}
               required={true}
             />
           </LabelInputContainer>
@@ -87,7 +103,9 @@ export default function Contact() {
               name="content"
               placeholder="Your message"
               required={true}
-              onChange={handleChange}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+                setContent(e.target.value);
+              }}
             />
           </LabelInputContainer>
 

@@ -25,6 +25,7 @@
     "react-dom": "^18",
     "react-element-to-jsx-string": "^15.0.0",
     "react-lottie": "^1.2.4",
+    "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },

@@ -1,36 +1,48 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# Dependency directories
+node_modules/
+.pnp/
 .pnp.js
-.yarn/install-state.gz
 
-# testing
-/coverage
+# Next.js build output
+.next/
+out/
 
-# next.js
-/.next/
-/out/
+# Production folder for static export
+out/
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
-# local env files
-.env*.local
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
-.vercel
+# Next.js cache
+.next/cache/
 
-# typescript
+# Coverage directory used by testing tools
+coverage/
+
+# Build output
+dist/
+
+# MacOS files
+.DS_Store
+
+# Vercel deployment
+.vercel/
+
+# ESLint cache
+.eslintcache
+
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Optional: Ignore yarn lockfile if you're using npm
+# yarn.lock

@@ -9,7 +9,7 @@ export default function Profiles() {
         A Showcase of My{" "}
         <span className="text-purple-400">Professional Journey</span>
       </h1>
-      <div className=" py-20 flex flex-col md:flex-row w-full bg-black-100 justify-center  ">
+      <div className=" py-20 flex flex-col md:flex-row flex-wrap w-full bg-black-100 justify-center  ">
         <EnhancedLeetCodeProfile />
         <EnhancedGitHubProfile />
         <LinkedInProfileComponent />
