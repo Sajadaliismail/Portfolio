@@ -34,13 +34,9 @@ export default function Contact() {
         toast.success("Message send successfully");
       } else {
         toast.error(result.message);
-
-        // console.log("Error sending email:", result.message);
       }
     } catch (error) {
       toast.error("Error sending message");
-
-      // console.error("Error:", error);
     }
   };
 

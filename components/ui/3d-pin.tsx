@@ -45,6 +45,7 @@ export const PinContainer = ({
         className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 -translate-x-1/2 -translate-y-1/2"
       >
         <div
+          onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
           style={{
             transform: transform,
           }}

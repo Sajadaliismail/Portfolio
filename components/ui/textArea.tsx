@@ -41,7 +41,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, InputProps>(
           maxLength={500}
           rows={5}
           className={cn(
-            `resize-none flex  w-full border-none bg-black-100 text-black text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
+            `resize-none flex  w-full border-none bg-black-100 text-black text-white  rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
           file:text-sm file:font-medium placeholder-text-neutral-600 
           focus-visible:outline-none focus-visible:ring-[1px] focus-visible:ring-gray-800
            disabled:cursor-not-allowed disabled:opacity-50

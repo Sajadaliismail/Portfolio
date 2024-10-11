@@ -40,20 +40,28 @@ export async function POST(request: Request) {
     Message:
     ${content}
 
-    Best regards,
-    Your Website
+   
   `,
       html: `
-    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
-      <h2 style="color: #4CAF50;">New Message: ${subject}</h2>
-      <p><strong>From:</strong> ${name} (${email})</p>
-      <p><strong>Subject:</strong> ${subject}</p>
-      <p><strong>Message:</strong></p>
-      <p style="background-color: #f9f9f9; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">
-        ${content}
-      </p>
-      <br>
-      <p>Best regards,<br>Your Website</p>
+    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background-color: #f4f4f4; border-radius: 10px; border: 1px solid #ddd;">
+      <div style="background-color: #4CAF50; color: white; padding: 15px; border-radius: 10px 10px 0 0;">
+        <h2 style="margin: 0;">New Message: ${subject}</h2>
+      </div>
+      
+      <div style="padding: 20px; background-color: white; border-radius: 0 0 10px 10px;">
+        <p style="font-size: 16px;"><strong>From:</strong> ${name} (<a href="mailto:${email}" style="color: #4CAF50; text-decoration: none;">${email}</a>)</p>
+        <p style="font-size: 16px;"><strong>Subject:</strong> ${subject}</p>
+        <p style="font-size: 16px; margin-top: 20px;"><strong>Message:</strong></p>
+        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; font-size: 15px;">
+          ${content}
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="mailto:${email}" style="display: inline-block; padding: 12px 25px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">Reply to ${name}</a>
+        </div>
+        
+        <br>
+      </div>
     </div>
   `,
     });

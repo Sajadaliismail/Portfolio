@@ -23,7 +23,7 @@ const navItems = [
     link: "#projects",
   },
   {
-    name: "Tech Profiles",
+    name: "TechHub",
     link: "#profiles",
   },
   {

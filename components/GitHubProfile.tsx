@@ -83,11 +83,11 @@ export default function EnhancedGitHubProfile() {
   }, [username]);
 
   if (loading) {
-    return <div>asfas</div>;
+    return <div></div>;
   }
 
   if (error || !stats) {
-    return <div>asf</div>;
+    return <div></div>;
   }
 
   return (
