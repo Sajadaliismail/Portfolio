@@ -18,7 +18,7 @@ export default function Home() {
       <Profiles />
       <Experience />
       <Contact />
-      <Copyright children={"Sajad Ali Ismail"} />
+      <Copyright props={"Sajad Ali Ismail"}></Copyright>
     </div>
   );
 }
