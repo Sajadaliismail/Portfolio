@@ -51,11 +51,11 @@ export default function EnhancedLeetCodeProfile() {
   }, [username]);
 
   if (loading) {
-    return <div></div>;
+    return null;
   }
 
   if (error || !stats) {
-    return <div></div>;
+    return null;
   }
 
   return (
