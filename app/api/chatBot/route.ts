@@ -6,8 +6,8 @@ import {
 } from "@google/generative-ai";
 
 export async function POST(request: Request) {
+  console.log(process.env);
   try {
-    // Log the incoming request
     console.log("[INFO] Incoming request received");
 
     const { prompt } = await request.json();
