@@ -46,7 +46,7 @@ export default function HeroComponent() {
             text: "to",
           },
           {
-            text: "interface:",
+            text: "UI,",
             className: "text-blue-200",
           },
           {

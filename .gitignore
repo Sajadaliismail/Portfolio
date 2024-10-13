@@ -46,3 +46,4 @@ dist/
 
 # Optional: Ignore yarn lockfile if you're using npm
 # yarn.lock
+.vercel
