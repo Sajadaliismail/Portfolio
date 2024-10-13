@@ -23,7 +23,7 @@ export default function ChatBot() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
-
+  const inputRef = useRef<HTMLInputElement>(null);
   const handleSubmit = async () => {
     if (!prompt.trim()) return;
 
@@ -62,6 +62,12 @@ export default function ChatBot() {
     }
   }, [chats]);
 
+  useEffect(() => {
+    if (isChatOpen) {
+      inputRef.current?.focus();
+    }
+  }, [isChatOpen]);
+
   return (
     <div className="fixed z-50 bottom-4 right-4" style={{ zIndex: 1000 }}>
       <AnimatePresence>
@@ -74,7 +80,9 @@ export default function ChatBot() {
           >
             <button
               className="rounded-full w-16 h-16 bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-shadow duration-900 animate-bounce"
-              onClick={() => setIsChatOpen(true)}
+              onClick={() => {
+                setIsChatOpen(true);
+              }}
             >
               <Image
                 width={60}
@@ -92,9 +100,9 @@ export default function ChatBot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="w-80 md:w-96 h-[32rem] bg-black-100 border border-border rounded-lg shadow-lg flex flex-col overflow-hidden"
+            className="w-80 md:w-96 h-[32rem] bg-black-100 border border-gray-700 rounded-lg shadow-lg flex flex-col overflow-hidden"
           >
-            <div className="flex items-center justify-between p-4 border-b border-border">
+            <div className="flex items-center justify-between p-4 border-gray-800 border-b">
               <div className="flex items-center space-x-2">
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                   <Image width={30} height={30} src="/assistant.png" alt="AI" />
@@ -150,7 +158,7 @@ export default function ChatBot() {
                 </div>
               )}
             </div>
-            <div className="p-4 border-t border-border">
+            <div className="p-4 border-t  border-gray-800 ">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -159,6 +167,7 @@ export default function ChatBot() {
                 className="flex items-center space-x-2"
               >
                 <Input
+                  ref={inputRef}
                   type="text"
                   placeholder="Type your message..."
                   value={prompt}
