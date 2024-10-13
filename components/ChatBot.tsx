@@ -172,7 +172,7 @@ export default function ChatBot() {
                   placeholder="Type your message..."
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
-                  className="flex-1 w-64"
+                  className="flex-1 w-58 md:w-64"
                 />
                 <Button type="submit" disabled={isLoading}>
                   <Send className="h-4 w-4" />

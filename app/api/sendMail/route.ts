@@ -5,7 +5,6 @@ export async function POST(request: Request) {
   try {
     const { name, email, subject, content } = await request.json();
 
-    // Validate required fields
     if (!name || !email || !subject || !content) {
       return NextResponse.json(
         { message: "All fields are required." },

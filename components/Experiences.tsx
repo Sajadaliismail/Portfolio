@@ -7,7 +7,7 @@ export default function Experience() {
       <h1 className="md:heading text-4xl text-center py-8 ">
         My work <span className="text-purple-400">Experience</span>
       </h1>
-      <div className="flex flex-col mt-5 py-20  md:flex-row w-full bg-black-100 justify-around items-center gap-5  ">
+      <div className="flex flex-col mt-5 py-20 flex-wrap md:flex-row w-full bg-black-100 justify-around items-center gap-5  ">
         {companies.map((company) => (
           <BackgroundGradient
             key={company.id}
