@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const API = process.env.GEMINI_API || "";
+    const API = process.env.NEXT_PUBLIC_GEMINI_API || "";
     const genAI = new GoogleGenerativeAI(API);
     const model = genAI.getGenerativeModel({
       model: "gemini-1.5-pro",
