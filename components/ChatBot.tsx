@@ -49,7 +49,7 @@ export default function ChatBot() {
       setError("");
     } catch (error) {
       console.error("[ERROR]", error);
-      setError("An unexpected error occurred");
+      setError("Sorry, Please try again");
     } finally {
       setIsLoading(false);
     }
