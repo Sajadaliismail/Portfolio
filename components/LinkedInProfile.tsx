@@ -25,7 +25,7 @@ export default function LinkedInProfileComponent() {
   // Replace with actual LinkedIn profile data
   const profile: LinkedInProfile = {
     profile_picture:
-      "https://media.licdn.com/dms/image/v2/D5635AQHVUwZrq4X6ew/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1721897078613?e=1729177200&v=beta&t=8rD8-ekuHbgD7vXWL64hp0cy8olGFRb1O1UNgDG4xUw",
+      "https://media.licdn.com/dms/image/v2/D5603AQEG4-F5fG-tAg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721897076492?e=1736380800&v=beta&t=yTIYvSu7wED8FLdJqPCrNEIxGmkgXUOrp0881WL141Y",
     name: "Sajad Ali Ismail",
     bio: "Node.js & React Developer | Full-Stack Engineer | Mechanical Engineer",
     followers: 1136,
