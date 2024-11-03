@@ -28,7 +28,7 @@ export default function LinkedInProfileComponent() {
       "https://media.licdn.com/dms/image/v2/D5635AQHVUwZrq4X6ew/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1721897078613?e=1729177200&v=beta&t=8rD8-ekuHbgD7vXWL64hp0cy8olGFRb1O1UNgDG4xUw",
     name: "Sajad Ali Ismail",
     bio: "Node.js & React Developer | Full-Stack Engineer | Mechanical Engineer",
-    followers: 996,
+    followers: 1136,
     posts: 20,
     location: "Ernakulam",
     created_at: "2013-08-23T15:25:49Z",

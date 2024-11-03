@@ -65,19 +65,10 @@ export const gridItems = [
 export const companies = [
   {
     id: 1,
-    title: "Junior Web Developer",
-    company: "CrowdLinks Technologies",
-    Place: "Edappally, Kochi - 682025",
-    Dates: "February 2022 - September 2023",
-    Description:
-      "Gained practical experience in building responsive and interactive web pages using HTML, CSS, and JavaScript. Developed a solid foundation in front-end web development, focusing on translating design mockups into functional, clean-coded websites.",
-  },
-  {
-    id: 2,
     title: "Production Manager",
     company: "Royal Wood Packers",
     Place: "Perumabvoor, Kochi - 683547",
-    Dates: "June 2016 - December 2021",
+    Dates: "June 2016 - Septemner 2023",
     Description:
       "Coordinated cross-functional teams to ensure efficient production processes, meeting deadlines, and maintaining quality standards. Led efforts to streamline communication between departments, optimizing workflow and ensuring successful project execution.",
   },
@@ -131,12 +122,30 @@ export const projects = [
     link: "StreamHive.com",
     href: "https://stream-hive-lemon.vercel.app/home",
   },
-  // {
-  //   id: 4,
-  //   title: "Animated Apple Iphone 3D Website",
-  //   des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-  //   img: "/p4.svg",
-  //   iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-  //   link: "/ui.apple.com",
-  // },
+  {
+    id: 4,
+    title: "Animated book flipping webapp",
+    des: "Recreated a book interface using React packages, combining GSAP animations",
+    img: "/flippage.png",
+    iconLists: ["/next.svg", "/tailwind.svg", "/ts.svg", "/react.svg"],
+    href: "https://pageflip.vercel.app",
+
+    link: "Pageflip.com",
+  },
+  {
+    id: 5,
+    title: "Cooldrinks animated hero component",
+    des: "Made an animated hero component for a cooldrinks website using GSAP ",
+    img: "/straw.png",
+    iconLists: [
+      "/next.svg",
+      "/tailwind.svg",
+      "/ts.svg",
+      "/react.svg",
+      "/gsap.svg",
+    ],
+    href: " https://hero-animation-can.vercel.app/",
+
+    link: "Beercan.com",
+  },
 ];
