@@ -1,9 +1,12 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-
 export async function POST(request: Request) {
   try {
     const { name, email, subject, content } = await request.json();
+
+    // Get visitor's IP address
+    const forwarded = request.headers.get("x-forwarded-for");
+    const ip = forwarded ? forwarded.split(",")[0] : request.headers.get("host");
 
     if (!name || !email || !subject || !content) {
       return NextResponse.json(
@@ -11,6 +14,8 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    console.log(`Received message from IP: ${ip}`); // Log IP for debugging/spam prevention
 
     const MAIL_SETTINGS = {
       service: "gmail",
@@ -39,7 +44,7 @@ export async function POST(request: Request) {
     Message:
     ${content}
 
-   
+    IP: ${ip}
   `,
       html: `
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background-color: #f4f4f4; border-radius: 10px; border: 1px solid #ddd;">
@@ -54,12 +59,11 @@ export async function POST(request: Request) {
         <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; font-size: 15px;">
           ${content}
         </div>
-
+        <p style="font-size: 14px; color: #555; margin-top: 15px;"><strong>IP Address:</strong> ${ip}</p>
+        
         <div style="text-align: center; margin-top: 30px;">
           <a href="mailto:${email}" style="display: inline-block; padding: 12px 25px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">Reply to ${name}</a>
         </div>
-        
-        <br>
       </div>
     </div>
   `,
@@ -67,7 +71,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {
-    // console.error("Error sending email:", error);
+    console.error("Error sending email:", error);
     return NextResponse.json(
       { message: "Failed to send email", error },
       { status: 500 }
