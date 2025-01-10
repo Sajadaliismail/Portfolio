@@ -16,7 +16,7 @@ export default function Contact() {
     const data = { name, email, subject, content };
 
     try {
-      const response = await fetch("/api/sendMail", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
