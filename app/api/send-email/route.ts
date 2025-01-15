@@ -5,7 +5,7 @@ const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 export async function POST(request: Request) {
   try {
     const { name, email, subject, content, token } = await request.json();
-
+    
     if (!token) {
       return NextResponse.json(
         { message: "reCAPTCHA token is missing" },

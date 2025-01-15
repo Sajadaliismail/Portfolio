@@ -13,16 +13,26 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const grecaptcha = window.grecaptcha;
-    const token = await grecaptcha.execute(
-      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-      { action: "submit" }
-    );
-
-    const data = { name, email, subject, content,token };
-
+  
     try {
+      // Wait for reCAPTCHA to load and initialize
+      if (typeof grecaptcha === "undefined") {
+        throw new Error("reCAPTCHA is not loaded yet.");
+      }
+  
+      // Check if clients exist
+      if (!grecaptcha.render) {
+        throw new Error("No reCAPTCHA clients exist.");
+      }
+  
+      // Generate reCAPTCHA token
+      const token = await grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+        { action: "submit" }
+      );
+  
+      const data = { name, email, subject, content, token };
+  
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -30,23 +40,25 @@ export default function Contact() {
         },
         body: JSON.stringify(data),
       });
-
+  
       const result = await response.json();
-
+  
       if (response.ok) {
         setContent("");
         setEmail("");
         setName("");
         setSubject("");
-        toast.success("Message send successfully");
+        toast.success("Message sent successfully");
       } else {
         toast.error(result.message);
       }
     } catch (error) {
-      toast.error("Error sending message");
+      if(error instanceof Error)
+        toast.error(error?.message || "Error sending message");
+      console.error(error);
     }
   };
-
+  
   return (
     <section id="contact" className="bg-black-100">
       <Toaster
