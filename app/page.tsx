@@ -8,12 +8,12 @@ import HeroComponent from "@/components/HeroComponent";
 import Profiles from "@/components/Profiles";
 import Projects from "@/components/Projects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Home() {
   return (
     <div className=" bg-black-100 relative " style={{ scrollbarWidth: "none" }}>
-          <Analytics />
+      <Analytics />
       <FloatingNav />
       <ChatBot />
       <HeroComponent />

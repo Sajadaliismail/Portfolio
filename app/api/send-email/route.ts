@@ -1,12 +1,52 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+
+const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY;
 export async function POST(request: Request) {
   try {
-    const { name, email, subject, content } = await request.json();
+    const { name, email, subject, content, token } = await request.json();
 
+    if (!token) {
+      return NextResponse.json(
+        { message: "reCAPTCHA token is missing" },
+        { status: 404 }
+      );
+    }
+
+    if (!name || !email || !subject || !content) {
+      return NextResponse.json(
+        { message: "Empty fields" },
+        { status: 404 }
+      );
+    }
+
+    const recaptchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          secret: RECAPTCHA_SECRET_KEY!,
+          response: token,
+        }),
+      }
+    );
+
+    const recaptchaResult = await recaptchaResponse.json();
+
+    if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
+      return NextResponse.json(
+        {
+          message: "Failed reCAPTCHA validation. Please try again.",
+        },
+        { status: 403 }
+      );
+    }
     // Get visitor's IP address
     const forwarded = request.headers.get("x-forwarded-for");
-    const ip = forwarded ? forwarded.split(",")[0] : request.headers.get("host");
+    const ip = forwarded
+      ? forwarded.split(",")[0]
+      : request.headers.get("host");
 
     if (!name || !email || !subject || !content) {
       return NextResponse.json(

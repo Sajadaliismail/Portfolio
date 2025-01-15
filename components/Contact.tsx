@@ -1,9 +1,9 @@
 import { Toaster, toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 import { TextArea } from "./ui/textArea";
-import { HtmlHTMLAttributes, useState } from "react";
+import { useState } from "react";
+import Script from "next/script";
 
 export default function Contact() {
   const [name, setName] = useState<string>("");
@@ -13,7 +13,14 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = { name, email, subject, content };
+
+    const grecaptcha = window.grecaptcha;
+    const token = await grecaptcha.execute(
+      process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+      { action: "submit" }
+    );
+
+    const data = { name, email, subject, content,token };
 
     try {
       const response = await fetch("/api/send-email", {
@@ -104,7 +111,10 @@ export default function Contact() {
               }}
             />
           </LabelInputContainer>
-
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            strategy="lazyOnload"
+          />
           <button
             className="bg-gradient-to-br relative group/btn from-blue-900 to-gray-800 block bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
